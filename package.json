@@ -1,0 +1,21 @@
+{
+  "name": "amtube",
+  "version": "1.0.0",
+  "description": "it would be the youtube like plateform ,here i will learn about vedio managing technique.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev":"nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "AMTUBE"
+  },
+  "keywords": [
+    "BACKEND",
+    "YOUTUBE",
+    "VEDIOPLAYER"
+  ],
+  "author": "AMAN MATHUR",
+  "license": "ISC"
+}
