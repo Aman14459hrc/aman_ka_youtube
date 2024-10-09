@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import jwt from "JsonWebTokenError"
+import jwt from "jsonwebtoken";
+
 
 
 const userSchema = new mongoose.Schema({
@@ -58,7 +59,7 @@ const userSchema = new mongoose.Schema({
 });
 
 
-schema.pre('save', async function (next) {
+userSchema.pre('save', async function (next) {
     if (this.isModified("password")) {
         this.password = await bcrypt.hash(this.password, 10)
         next()
@@ -88,7 +89,7 @@ userSchema.methods.generateAccessToken = async function () {
 };
 
 
-userSchema.methods.refreshToken = async function () {
+userSchema.methods.refreshTokenfun = async function () {
     return jwt.sign(
         {
             _id: this._id,
@@ -101,4 +102,4 @@ userSchema.methods.refreshToken = async function () {
     )
 }
 
-export default User = mongoose.model("User", userSchema);
+export const User = mongoose.model('User', userSchema);
