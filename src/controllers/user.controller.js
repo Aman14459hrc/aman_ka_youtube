@@ -28,6 +28,7 @@ if(!coverimage){
 
 const avtarLocalPath = req.files?.avtar[0]?.path
 const coverLocalPath = req.files?.coverimage[0]?.path
+console.log(req.files)
 if (!avtarLocalPath) {
     throw new Apierror(403,"avtar image not found ");
     
@@ -35,6 +36,7 @@ if (!avtarLocalPath) {
 if (!coverLocalPath) {
     throw new Apierror(404,"cover image not found  ")
 }
+
    const avtarUpload = await uploadFileCloudinary(avtarLocalPath)
    const coverUpload = await uploadFileCloudinary(coverLocalPath)
 
