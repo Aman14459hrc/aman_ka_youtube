@@ -9,9 +9,9 @@
                 return await fn(req,res,next)
                 
             } catch (error) {
-                res.status(error.code || 500).json({
+                res.status(error.status|| 500).json({
                     success:"failed",
-                    message:error.message
+                    message:error.message || "something went wrose "
                 })
                 
             }
